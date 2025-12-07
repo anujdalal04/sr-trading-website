@@ -58,7 +58,9 @@ app.use((req, res, next) => {
 
 // Email configuration
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com', // Explicit host
+  port: 465,              // Secure port (SSL)
+  secure: true,           // true for 465, false for other ports
   auth: {
     user: process.env.EMAIL_USER || 'your-email@gmail.com',
     pass: process.env.EMAIL_PASS || 'heip przg ahdq hxfd'
