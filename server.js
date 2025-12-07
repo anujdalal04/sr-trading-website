@@ -73,7 +73,7 @@ app.post('/send-email', contactLimiter, async (req, res) => {
     // Send email using Resend
     const data = await resend.emails.send({
       from: 'SR Trading Contact <onboarding@resend.dev>', // Sends from Resend's verified domain
-      to: 'anujd2357@gmail.com', // Your email
+      to: 'anujd300@gmail.com', // MUST match your Resend account email for testing
       reply_to: email, // Valid reply-to header
       subject: `New Contact: ${req.body.subject || 'Inquiry'} from ${name}`,
       html: `
