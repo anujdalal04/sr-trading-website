@@ -1,4 +1,6 @@
 require('dotenv').config();
+const dns = require('node:dns');
+dns.setDefaultResultOrder('ipv4first'); // Force IPv4 to prevent Render/Gmail timeouts
 const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
