@@ -148,7 +148,6 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-// Start the server
 const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log('Press Ctrl+C to stop the server');
