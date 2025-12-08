@@ -9,21 +9,24 @@ Welcome to the official repository for the **SR Trading Co.** website. This proj
 - Smooth scrolling and animations.
 - "Glassmorphism" design elements.
 
-**(Place Screenshot of Homepage Here)**
+<img width="1266" height="714" alt="Screenshot 2025-12-08 at 15 26 57" src="https://github.com/user-attachments/assets/ab8efa03-bef9-46f6-bafb-f2485be3b6af" />
+
 
 ### 2. Contact Form with Email Notifications
 - Powered by **Resend API**.
 - Sends instant email notifications to `srwaterpump@gmail.com` upon form submission.
 - Includes sender details (Name, Phone, Email, Subject, Message).
 
-**(Place Screenshot of Email Notification Here)**
+<img width="517" height="357" alt="Screenshot 2025-12-08 at 15 27 55" src="https://github.com/user-attachments/assets/f87adfa7-c122-43e0-964e-8f8a319f0607" />
+
 
 ### 3. Google Sheets Integration
 - Automatically saves every contact form submission to a designated Google Sheet.
 - Auto-creates headers if the sheet is empty (`Date`, `Name`, `Email`, `Phone`, `Subject`, `Message`).
 - Secure server-side authentication using Google Service Account.
 
-**(Place Screenshot of Google Sheet Here)**
+<img width="1056" height="282" alt="Screenshot 2025-12-08 at 15 28 25" src="https://github.com/user-attachments/assets/4824b00e-9d3d-4386-b4b3-546b6673ae80" />
+
 
 ## Tech Stack
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
