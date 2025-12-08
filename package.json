@@ -12,6 +12,8 @@
     "dotenv": "^16.5.0",
     "express": "^4.21.2",
     "express-rate-limit": "^8.2.1",
+    "google-auth-library": "^10.5.0",
+    "google-spreadsheet": "^5.0.2",
     "helmet": "^8.1.0",
     "resend": "^2.0.0"
   }

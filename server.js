@@ -87,7 +87,65 @@ app.post('/send-email', contactLimiter, async (req, res) => {
       `
     });
 
+
+
     console.log('Email sent via Resend:', data);
+
+    // --- Google Sheets Integration ---
+    try {
+      const { GoogleSpreadsheet } = require('google-spreadsheet');
+      const { JWT } = require('google-auth-library');
+
+      // Check if credentials exist
+      if (process.env.SPREADSHEET_ID && process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL && process.env.GOOGLE_PRIVATE_KEY) {
+        console.log('Attempting to save to Google Sheets...');
+
+        // Initialize Auth
+        const rawKey = process.env.GOOGLE_PRIVATE_KEY || '';
+        // Remove any surrounding quotes if they exist (user might have double quoted or dotenv didn't strip)
+        const cleanKey = rawKey.replace(/^["']|["']$/g, '').replace(/\\n/g, '\n');
+
+        const serviceAccountAuth = new JWT({
+          email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+          key: cleanKey,
+          scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+        });
+
+        const doc = new GoogleSpreadsheet(process.env.SPREADSHEET_ID, serviceAccountAuth);
+
+        await doc.loadInfo(); // loads document properties and worksheets
+
+        const sheet = doc.sheetsByIndex[0]; // use the first sheet
+
+        // Check if headers are defined, if not add them
+        try {
+          await sheet.loadHeaderRow();
+        } catch (e) {
+          console.log('Sheet headers missing, adding them...');
+          await sheet.setHeaderRow(['Date', 'Name', 'Email', 'Phone', 'Subject', 'Message']);
+        }
+
+        // Append row
+        // Assuming headers: Date, Name, Email, Phone, Subject, Message
+        const row = await sheet.addRow({
+          Date: new Date().toISOString(),
+          Name: name,
+          Email: email,
+          Phone: phone || '',
+          Subject: req.body.subject || 'General Inquiry',
+          Message: message
+        });
+
+        console.log('Successfully added to Google Sheet');
+      } else {
+        console.log('Google Sheets credentials missing, skipping sheet update.');
+      }
+    } catch (sheetError) {
+      console.error('Error saving to Google Sheet:', sheetError);
+      // We don't fail the request if sheet update fails, just log it.
+    }
+    // ---------------------------------
+
     res.status(200).json({ success: true, message: 'Message sent successfully!' });
 
   } catch (error) {

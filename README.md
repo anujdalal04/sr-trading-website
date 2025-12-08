@@ -1,36 +1,74 @@
 # SR Trading Co. Website
 
-This is the website for SR Trading Co., featuring a contact form that sends emails directly to srtradingdalal@gmail.com.
+Welcome to the official repository for the **SR Trading Co.** website. This project is a modern, responsive website built for a water pump and machinery trading business, featuring a robust contact form that sends emails and saves leads to Google Sheets.
+
+## Features
+
+### 1. Modern UI/UX
+- Responsive design for mobile and desktop.
+- Smooth scrolling and animations.
+- "Glassmorphism" design elements.
+
+**(Place Screenshot of Homepage Here)**
+
+### 2. Contact Form with Email Notifications
+- Powered by **Resend API**.
+- Sends instant email notifications to `srwaterpump@gmail.com` upon form submission.
+- Includes sender details (Name, Phone, Email, Subject, Message).
+
+**(Place Screenshot of Email Notification Here)**
+
+### 3. Google Sheets Integration
+- Automatically saves every contact form submission to a designated Google Sheet.
+- Auto-creates headers if the sheet is empty (`Date`, `Name`, `Email`, `Phone`, `Subject`, `Message`).
+- Secure server-side authentication using Google Service Account.
+
+**(Place Screenshot of Google Sheet Here)**
+
+## Tech Stack
+- **Frontend**: HTML5, CSS3, JavaScript (Vanilla)
+- **Backend**: Node.js, Express.js
+- **Services**: 
+  - **Resend** (Email Delivery)
+  - **Google Sheets API** (Data Storage)
+  - **Render** (Deployment Platform)
 
 ## Setup Instructions
 
-1. Install dependencies:
-```
-npm install
-```
+### Prerequisites
+- Node.js installed.
+- Google Cloud Service Account (JSON key).
+- Resend API Key.
 
-2. Configure email credentials:
-   - Edit the `.env` file with your Gmail credentials
-   - For Gmail, you'll need to use an app password instead of your regular password
-   - To create an app password:
-     1. Go to your Google Account → Security
-     2. Enable 2-Step Verification if not already enabled
-     3. Go to "App passwords"
-     4. Create a new app password for "Mail" and "Other"
-     5. Copy the generated password to the .env file
+### Installation
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-3. Start the server:
-```
-npm start
-```
+3. Create a `.env` file in the root directory with the following keys:
+   ```env
+   PORT=3000
+   RESEND_API_KEY=re_12345...
+   SPREADSHEET_ID=your_google_sheet_id
+   GOOGLE_SERVICE_ACCOUNT_EMAIL=your-service-account-email
+   GOOGLE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n..."
+   ```
 
-4. Open your browser and navigate to:
-```
-http://localhost:3000
-```
+4. Start the server:
+   ```bash
+   npm start
+   ```
 
-## Important Notes
+5. Visit `http://localhost:3000`.
 
-- The contact form now sends emails directly to srtradingdalal@gmail.com
-- Make sure your Gmail account is configured to allow less secure apps or use an app password
-- If you deploy this to production, update the email configuration with proper security measures 
+## Deployment (Render)
+
+This project is ready for deployment on Render.
+**IMPORTANT**: You must add the Environment Variables in the Render Dashboard for the contact form to work.
+
+1. Create a new **Web Service** on Render connected to this repo.
+2. Set the **Build Command** to `npm install`.
+3. Set the **Start Command** to `node server.js`.
+4. Add the **Environment Variables** from your `.env` file.
