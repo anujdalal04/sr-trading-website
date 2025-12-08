@@ -413,9 +413,9 @@ h4 {
    Marquee
    ========================================= */
 .brands-marquee {
-    background: var(--primary);
+    background: #fff;
     padding: 2rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     width: 100vw;
     overflow: hidden;
 }
@@ -431,17 +431,17 @@ h4 {
     height: 60px;
     /* Increased size */
     width: auto;
-    filter: brightness(0) invert(1);
-    /* Keep white for the navy background */
-    opacity: 0.9;
-    /* Increased opacity from 0.5 to 0.9 */
+    filter: none;
+    /* Show original colors */
+    opacity: 1;
+    /* Full opacity */
     transition: var(--transition);
     margin-right: 2rem;
     /* Consistent spacing */
 }
 
 .marquee-content img:hover {
-    opacity: 1;
+    transform: scale(1.05);
 }
 
 @keyframes marquee {
