@@ -915,10 +915,11 @@ h4 {
     }
 
     .hero {
+        height: auto;
+        min-height: 100vh;
         padding-top: 120px;
-        /* Increased to prevent header overlap */
+        padding-bottom: 4rem;
         align-items: flex-start;
-        /* Aligns text to top area but with padding */
     }
 
     .hamburger {
