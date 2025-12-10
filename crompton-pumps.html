@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crompton Pumps Catalogue - SR Trading Co. Authorized Dealer">
+    <title>Crompton Pumps Catalogue | SR Trading Co.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Page specific overrides */
+        .crompton-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('images/hero-pumps.png') center/cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 4px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--gray-medium);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .product-img-wrapper {
+            height: 250px;
+            width: 100%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .product-img-wrapper img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .product-card-header {
+            padding: 1.5rem;
+            background: white;
+        }
+
+        .product-card-header h3 {
+            font-size: 1.25rem;
+            margin: 0;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .product-specs {
+            padding: 0 1.5rem 1.5rem;
+            flex-grow: 1;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: 0.85rem;
+            border-bottom: 1px dashed var(--gray-medium);
+            padding-bottom: 0.25rem;
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .spec-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .spec-value {
+            color: var(--primary);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            background: var(--gray-light);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb span {
+            color: #999;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">SR Trading Co<span class="dot">.</span></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#products" class="nav-link">Products</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="index.html#contact" class="nav-link btn-contact">Contact Us</a>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="brands.html">Brands</a>
+        <a href="index.html#contact">Contact Us</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="crompton-hero">
+        <div class="container">
+            <span class="section-badge">Brand Catalogue</span>
+            <h1 class="hero-title" style="font-size: 3.5rem;">Crompton Pumps</h1>
+            <p class="hero-desc" style="margin: 0 auto;">High performance pumps for domestic & agricultural use.</p>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> <span>/</span> <a href="brands.html">Brands</a> <span>/</span> Crompton Pumps
+        </div>
+
+        <div class="section-header center">
+            <h2 class="section-title">Product Categories</h2>
+        </div>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="https://www.crompton.co.in/cdn/shop/files/MiniCrest_1.webp?v=1694772458&width=300"
+                        alt="Residential Pumps">
+                </div>
+                <div class="product-card-header">
+                    <h3>Residential Pumps</h3>
+                </div>
+                <div class="product-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Type</span>
+                        <span class="spec-value">Domestic Monoblock</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Application</span>
+                        <span class="spec-value">Home Water Supply</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Features</span>
+                        <span class="spec-value">High Suction, Durable</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="https://www.crompton.co.in/cdn/shop/files/V-6-50-feet-per-stage-Pumps-300x300.png?v=1687851690&width=300"
+                        alt="Agricultural Pumps">
+                </div>
+                <div class="product-card-header">
+                    <h3>Agricultural Pumps</h3>
+                </div>
+                <div class="product-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Type</span>
+                        <span class="spec-value">Submersible / Openwell</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Application</span>
+                        <span class="spec-value">Farming, Irrigation</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Features</span>
+                        <span class="spec-value">Heavy Duty, Efficient</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="https://www.crompton.co.in/cdn/shop/files/Solar_Pump_Header.png?v=1749630879&width=300"
+                        alt="Solar Pumps">
+                </div>
+                <div class="product-card-header">
+                    <h3>Solar Pumps</h3>
+                </div>
+                <div class="product-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Type</span>
+                        <span class="spec-value">Solar Submersible</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Source</span>
+                        <span class="spec-value">Renewable Energy</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Features</span>
+                        <span class="spec-value">Eco-friendly, Cost Saving</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="https://www.crompton.co.in/cdn/shop/files/Untitled-1_ef4f6bed-6f73-44eb-99ef-93b4e4a275d8.png?v=1694613355&width=300"
+                        alt="Mini Master">
+                </div>
+                <div class="product-card-header">
+                    <h3>Mini Master I</h3>
+                </div>
+                <div class="product-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Power</span>
+                        <span class="spec-value">1.0 HP</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Type</span>
+                        <span class="spec-value">Regenerative Pump</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Use</span>
+                        <span class="spec-value">Domestic Booster</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="https://www.crompton.co.in/cdn/shop/files/Untitled-1_ecb93f8f-9284-4569-9286-ea889cecd861.png?v=1694613709&width=300"
+                        alt="Champ Plus">
+                </div>
+                <div class="product-card-header">
+                    <h3>Champ Plus</h3>
+                </div>
+                <div class="product-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Power</span>
+                        <span class="spec-value">1.0 HP</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Type</span>
+                        <span class="spec-value">Self Priming</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Use</span>
+                        <span class="spec-value">Small Buildings</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="https://www.crompton.co.in/cdn/shop/files/Untitled-1_8c989372-2653-48a9-9e9c-5abb66b0cc53.png?v=1694613449&width=300"
+                        alt="Mini Master Plus">
+                </div>
+                <div class="product-card-header">
+                    <h3>Mini Master Plus</h3>
+                </div>
+                <div class="product-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Power</span>
+                        <span class="spec-value">0.5 HP</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Type</span>
+                        <span class="spec-value">Compact Pump</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Use</span>
+                        <span class="spec-value">Apartments, Bungalows</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="images/products/crompton-mbq.jpg" alt="MBQ Series">
+                </div>
+                <div class="product-card-header">
+                    <h3>MBQ Series</h3>
+                </div>
+                <div class="product-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Head</span>
+                        <span class="spec-value">Up to 30m</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Type</span>
+                        <span class="spec-value">Centrifugal Monoblock</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Phase</span>
+                        <span class="spec-value">Single Phase</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="product-img-wrapper">
+                    <img src="images/products/crompton-openwell.jpg" alt="Openwell Submersible">
+                </div>
+                <div class="product-card-header">
+                    <h3>Openwell Submersible</h3>
+                </div>
+                <div class="product-specs">
+                    <div class="spec-item">
+                        <span class="spec-label">Type</span>
+                        <span class="spec-value">Water Cooled</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Body</span>
+                        <span class="spec-value">Stainless Steel / CI</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Use</span>
+                        <span class="spec-value">Irrigation</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <a href="index.html#contact" class="btn btn-primary">Request Quote for Crompton Pumps</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 SR Trading Co. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Our Partner Brands - SR Trading Co.">
+    <title>Our Brands | SR Trading Co.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .brands-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.8)), url('images/hero-pumps.png') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .brands-grid-page {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            padding: 4rem 0;
+        }
+
+        .brand-card {
+            background: white;
+            border: 1px solid var(--gray-medium);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 3rem 2rem;
+            cursor: pointer;
+        }
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .brand-logo {
+            height: 80px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-logo img {
+            max-height: 100%;
+            width: auto;
+        }
+
+        .brand-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .brand-info p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">SR Trading Co<span class="dot">.</span></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#products" class="nav-link">Products</a>
+                <a href="brands.html" class="nav-link active">Brands</a>
+                <a href="index.html#contact" class="nav-link btn-contact">Contact Us</a>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="brands.html">Brands</a>
+        <a href="index.html#contact">Contact Us</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="brands-hero">
+        <div class="container">
+            <span class="section-badge">Trusted Partners</span>
+            <h1 class="hero-title">Our Brands</h1>
+            <p class="hero-desc" style="margin: 0 auto;">Authorized dealers for the world's leading pump manufacturers.
+            </p>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="section-header center" style="margin-top: 4rem;">
+            <p class="section-desc">Select a brand to view available products and catalogues.</p>
+        </div>
+
+        <div class="brands-grid-page">
+            <!-- Lubi -->
+            <a href="lubi-pumps.html" class="brand-card">
+                <div class="brand-logo">
+                    <img src="images/lubi-logo.png" alt="Lubi Pumps">
+                </div>
+                <div class="brand-info">
+                    <h3>Lubi</h3>
+                    <p>Comprehensive range of submersible, centrifugal, and industrial pumps.</p>
+                    <span class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);">View
+                        Catalogue</span>
+                </div>
+            </a>
+
+            <!-- Ansons -->
+            <a href="ansons-pumps.html" class="brand-card">
+                <div class="brand-logo">
+                    <img src="images/ansons-logo.png" alt="Ansons Pumps">
+                </div>
+                <div class="brand-info">
+                    <h3>Ansons Anco</h3>
+                    <p>Quality openwell and monoblock pumps.</p>
+                    <span class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);">View
+                        Catalogue</span>
+                </div>
+            </a>
+
+            <!-- Kirloskar -->
+            <a href="kirloskar-pumps.html" class="brand-card">
+                <div class="brand-logo">
+                    <img src="images/kirloskar-logo.png" alt="Kirloskar Brothers">
+                </div>
+                <div class="brand-info">
+                    <h3>Kirloskar</h3>
+                    <p>Industrial & Domestic pumps known for reliability and innovation.</p>
+                    <span class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);">View
+                        Catalogue</span>
+                </div>
+            </a>
+
+            <!-- Crompton -->
+            <a href="crompton-pumps.html" class="brand-card">
+                <div class="brand-logo">
+                    <img src="images/crompton-logo.png" alt="Crompton Greaves">
+                </div>
+                <div class="brand-info">
+                    <h3>Crompton</h3>
+                    <p>Wide range of dwelling and agricultural pumps.</p>
+                    <span class="btn btn-outline" style="color: var(--primary); border-color: var(--primary);">View
+                        Catalogue</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 SR Trading Co. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

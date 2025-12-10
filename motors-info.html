@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about High-Efficiency Electric Motors - SR Trading Co.">
+    <title>High-Efficiency Motors | SR Trading Co.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .info-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.8)), url('images/hero-pumps.png') center/cover;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .info-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-section:last-child {
+            border-bottom: none;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .info-content h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-content p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .info-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-content ul li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #444;
+        }
+
+        .info-content ul li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .info-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: #fff;
+            padding: 1rem;
+            border: 1px solid #eee;
+        }
+
+        .info-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .efficiency-badge {
+            display: inline-block;
+            background: #e6f4ea;
+            color: #1e8e3e;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .info-grid.reverse {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">SR Trading Co<span class="dot">.</span></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#products" class="nav-link active">Products</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="index.html#contact" class="nav-link btn-contact">Contact Us</a>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="brands.html">Brands</a>
+        <a href="index.html#contact">Contact Us</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="info-hero">
+        <div class="container">
+            <h1 class="hero-title">High-Efficiency Motors</h1>
+            <p class="hero-desc">Powering industry with robust and energy-saving electric motors.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Motor Basics -->
+        <section class="info-section">
+            <div class="info-grid">
+                <div class="info-content">
+                    <span class="efficiency-badge">IE3 / IE4 Standards</span>
+                    <h2>How Electric Motors Work</h2>
+                    <p>Electric motors convert electrical energy into mechanical energy using electromagnetism. In an
+                        induction motor (the most common industrial type), a rotating magnetic field in the stator
+                        induces a current in the rotor, creating torque.</p>
+                    <ul>
+                        <li><strong>Stator:</strong> The stationary part containing wire windings that generate magnetic
+                            fields.</li>
+                        <li><strong>Rotor:</strong> The rotating part that drives the shaft.</li>
+                        <li><strong>Cooling fan:</strong> Ensures maintaining optimal operating temperature.</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <!-- Local Image -->
+                    <img src="images/products/inductionmotor.jpg" alt="Induction Motor Exploded View">
+                    <p class="text-center text-sm mt-2 text-gray-500">Internal components of an Induction Motor</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Energy Efficiency -->
+        <section class="info-section">
+            <div class="info-grid reverse">
+                <div class="info-image">
+                    <!-- Local Image -->
+                    <img src="images/products/energy.jpg" alt="Motor Efficiency Diagram">
+                    <p class="text-center text-sm mt-2 text-gray-500">Energy Conversion Process</p>
+                </div>
+                <div class="info-content">
+                    <h2>Why Efficiency Matters</h2>
+                    <p>Motors consume over 45% of total global electricity. Switching to High-Efficiency (IE3) or
+                        Premium Efficiency (IE4) motors can significantly reduce operational costs and carbon footprint.
+                    </p>
+                    <ul>
+                        <li><strong>Lower Heat Loss:</strong> Higher quality materials reduce resistance (copper loss)
+                            and magnetic fatigue (iron loss).</li>
+                        <li><strong>Longevity:</strong> Cooler running motors have longer insulation life and bearing
+                            durability.</li>
+                        <li><strong>Cost Savings:</strong> The initial investment is often recovered within months
+                            through lower electricity bills.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 SR Trading Co. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

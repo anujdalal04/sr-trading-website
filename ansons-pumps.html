@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ansons Pumps Catalogue - Full Range | SR Trading Co.">
+    <title>Ansons Pumps Full Catalogue | SR Trading Co.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .ansons-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('images/hero-pumps.png') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .catalogue-container {
+            display: flex;
+            gap: 2rem;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        /* Sidebar Navigation */
+        .catalogue-sidebar {
+            width: 250px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-medium);
+        }
+
+        .catalogue-sidebar h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background-color: #e3f2fd;
+            /* Lighter blue for better contrast */
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* Main Content */
+        .catalogue-content {
+            flex-grow: 1;
+        }
+
+        .category-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 100px;
+            /* Offset for sticky header */
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--gray-medium);
+            padding-bottom: 1rem;
+        }
+
+        .category-header h2 {
+            margin: 0;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 4px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--gray-medium);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .product-img-wrapper {
+            height: 220px;
+            width: 100%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .product-img-wrapper img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .product-card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card h3 {
+            font-size: 1.1rem;
+            margin: 0 0 1rem 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .product-specs {
+            margin-top: auto;
+            font-size: 0.9rem;
+            color: #555;
+            background: var(--gray-light);
+            padding: 0.75rem;
+            border-radius: 4px;
+        }
+
+        .product-specs p {
+            margin: 0.25rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .breadcrumb {
+            padding: 1rem 0;
+            background: var(--gray-light);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb span {
+            color: #999;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .catalogue-container {
+                flex-direction: column;
+            }
+
+            .catalogue-sidebar {
+                width: 100%;
+                position: static;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">SR Trading Co<span class="dot">.</span></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#products" class="nav-link">Products</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="index.html#contact" class="nav-link btn-contact">Contact Us</a>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="brands.html">Brands</a>
+        <a href="index.html#contact">Contact Us</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="ansons-hero">
+        <div class="container">
+            <h1 class="hero-title" style="font-size: 3.5rem;">Ansons Pumps Catalogue</h1>
+            <p class="hero-desc" style="margin: 0 auto;">Comprehensive range of high-performance pumps.</p>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> <span>/</span> <a href="brands.html">Brands</a> <span>/</span> Ansons Pumps
+        </div>
+
+        <div class="catalogue-container">
+            <!-- Sidebar -->
+            <aside class="catalogue-sidebar">
+                <h3>Product Categories</h3>
+                <ul class="sidebar-nav">
+                    <li><a href="#submersible-motors">Submersible Motors</a></li>
+                    <li><a href="#submersible-pumpsets">Submersible Pumpsets</a></li>
+                    <li><a href="#monobloc-pumps">Monobloc Pumps</a></li>
+                    <li><a href="#openwell">Openwell Submersible</a></li>
+                    <li><a href="#domestic-pumps">Domestic Pumps</a></li>
+                    <li><a href="#flameproof">Flameproof Motors</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="catalogue-content">
+
+                <!-- 1. Submersible Motors -->
+                <div id="submersible-motors" class="category-section">
+                    <div class="category-header">
+                        <h2>Submersible Motors</h2>
+                    </div>
+                    <div class="product-grid">
+                        <!-- 4" CI -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/4inCImotor.png"
+                                    alt="4 inch Submersible CI Motors">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>4" Submersible CI Motors</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 HP to 7.5 HP</strong></p>
+                                    <p><span>Standard:</span> <strong>NEMA</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 4" SS -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/4in-SS-motor.png"
+                                    alt="4 inch Submersible SS Motors">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>4" Submersible SS Motors</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 HP to 7.5 HP</strong></p>
+                                    <p><span>Standard:</span> <strong>NEMA</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 4" AZ -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/4in-AZ-motor.png"
+                                    alt="4 inch Submersible AZ Motors">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>4" Submersible AZ Motors</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 HP to 1.0 HP</strong></p>
+                                    <p><span>Standard:</span> <strong>NEMA</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 4" OFS -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/4in-OFS-motor.png"
+                                    alt="4 inch Submersible OFS Motors">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>4" Submersible OFS Motors</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 HP to 1.0 HP</strong></p>
+                                    <p><span>Standard:</span> <strong>NEMA</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 6" CI -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/6in-CI-ZL-motor.png"
+                                    alt="6 inch Submersible CI Motors">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>6" Submersible CI Motors</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>3.0 HP to 40.0 HP</strong></p>
+                                    <p><span>Standard:</span> <strong>NEMA</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 6" SS -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/6in-SS-motor.png"
+                                    alt="6 inch Submersible SS Motors">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>6" Submersible SS Motors</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>3.0 HP to 40.0 HP</strong></p>
+                                    <p><span>Standard:</span> <strong>NEMA</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 6" ZL -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/6in-CI-ZL-motor.png"
+                                    alt="6 inch Submersible ZL Motors">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>6" Submersible ZL Motors</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>7.5 HP to 30.0 HP</strong></p>
+                                    <p><span>Standard:</span> <strong>NEMA</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 8" CI -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/8in-submersible-motor.png"
+                                    alt="8 inch Submersible CI Motors">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>8" Submersible CI Motors</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>15.0 HP to 40.0 HP</strong></p>
+                                    <p><span>Standard:</span> <strong>NEMA</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Submersible Pumpsets -->
+                <div id="submersible-pumpsets" class="category-section">
+                    <div class="category-header">
+                        <h2>Submersible Pumpsets</h2>
+                    </div>
+                    <div class="product-grid">
+                        <!-- 4" XE -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/4in-standard-pumpset.png"
+                                    alt="4 inch XE Pumpset">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>4" XE Pumpset</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 HP to 7.5 HP</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 4" AZ -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/4in-eco-pumpset.png" alt="4 inch AZ Pumpset">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>4" AZ Pumpset</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 HP to 1.0 HP</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 6" Radial -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/6in-radialflow-submersible-pumpset.png"
+                                    alt="6 inch Radial Flow">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>6" Radial Flow Pumpset</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>3.0 HP to 20.0 HP</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 6" Mixed -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/6in-mixflow-submersible-pumpset.png"
+                                    alt="6 inch Mixed Flow">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>6" Mixed Flow Pumpset</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>3.0 HP to 30.0 HP</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 6" 50ft -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/6in-50feet-submersible-pumpset.png"
+                                    alt="6 inch 50ft Pumpset">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>6" 50 Feet Pumpset</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>3.0 HP to 20.0 HP</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 8" MD/BD -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/8in-submersible-pumpset-img1.png"
+                                    alt="8 inch MD/BD Series">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>MD & BD Series</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>7.5 HP to 40.0 HP</strong></p>
+                                    <p><span>Type:</span> <strong>8" Pumpset</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Monobloc Pumps -->
+                <div id="monobloc-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Monobloc Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <!-- Ganga -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/monobloc-pumps-ganga2x2.png"
+                                    alt="Ganga Monobloc">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Ganga Series</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 HP to 2.0 HP</strong></p>
+                                    <p><span>Insulation:</span> <strong>"F" Class</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Standard Monobloc -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/monobloc-pumps-img.png" alt="Monobloc Pumps">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Monobloc Pumps</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>3.0 HP to 20.0 HP</strong></p>
+                                    <p><span>Insulation:</span> <strong>"F" Class</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Openwell Submersible -->
+                <div id="openwell" class="category-section">
+                    <div class="category-header">
+                        <h2>Openwell Submersible Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <!-- Horizontal -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/horizontal-openwell-pumps.png"
+                                    alt="Horizontal Openwell">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal Openwell</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>1.0 HP to 15.0 HP</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Vertical -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/vertical-openwell-pumps.png"
+                                    alt="Vertical Openwell">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Vertical Openwell</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>3.0 HP to 20.0 HP</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Domestic Pumps -->
+                <div id="domestic-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Domestic Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <!-- Saraswati -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/domestic-pump-saraswati.png" alt="Saraswati">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Saraswati</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 - 1.0 HP</strong></p>
+                                    <p><span>Class:</span> <strong>"F" Insulation</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Triveni -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/domestic-pump-triveni.png" alt="Triveni">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Triveni</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 - 1.0 HP</strong></p>
+                                    <p><span>Class:</span> <strong>"F" Insulation</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Krish -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/domestic-pump-krish.png" alt="Krish">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Krish</h3>
+                                <div class="product-specs">
+                                    <p><span>Power:</span> <strong>0.5 HP</strong></p>
+                                    <p><span>Class:</span> <strong>"F" Insulation</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Neel -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/domestic-pump-neel.png" alt="Neel">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Neel</h3>
+                                <div class="product-specs">
+                                    <p><span>Power:</span> <strong>0.5 HP</strong></p>
+                                    <p><span>Class:</span> <strong>"F" Insulation</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Jadoo -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/domestic-pump-jadoo.png" alt="Jadoo">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Jadoo</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 - 1.0 HP</strong></p>
+                                    <p><span>Class:</span> <strong>"F" Insulation</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Neptune -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/domestic-pump-neptune.png" alt="Neptune">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Neptune</h3>
+                                <div class="product-specs">
+                                    <p><span>Power:</span> <strong>1.0 HP</strong></p>
+                                    <p><span>Class:</span> <strong>"F" Insulation</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Azure -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/domestic-pump-azure.png" alt="Azure">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Azure</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 - 1.0 HP</strong></p>
+                                    <p><span>Class:</span> <strong>"F" Insulation</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ansons AHOW -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/domestic-pump-ansonsAHOW.png"
+                                    alt="Ansons AHOW">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Ansons AHOW</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 - 1.0 HP</strong></p>
+                                    <p><span>Class:</span> <strong>"F" Insulation</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Ansons Vertical -->
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/domestic-pump-ansonsvertical.png"
+                                    alt="Ansons Vertical">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Ansons Vertical</h3>
+                                <div class="product-specs">
+                                    <p><span>Range:</span> <strong>0.5 - 1.0 HP</strong></p>
+                                    <p><span>Class:</span> <strong>"F" Insulation</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Flameproof Motors -->
+                <div id="flameproof" class="category-section">
+                    <div class="category-header">
+                        <h2>Flameproof Motors</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.aapumps.com/images/domestic-pump-flameproofmotors.png"
+                                    alt="Flameproof Motors">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Flameproof Motors</h3>
+                                <div class="product-specs">
+                                    <p><span>Type:</span> <strong>Explosion Proof</strong></p>
+                                    <p><span>Application:</span> <strong>Hazardous Zones</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 SR Trading Co. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Smooth scroll for sidebar links with offset
+        document.querySelectorAll('.sidebar-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                const headerOffset = 100;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+
+                // Update active state
+                document.querySelectorAll('.sidebar-nav a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Highlight sidebar link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('.category-section');
+            const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

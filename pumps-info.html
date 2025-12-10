@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Submersible, Centrifugal, and Openwell Pumps - SR Trading Co.">
+    <title>Pumps Information | SR Trading Co.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        .info-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.8)), url('images/hero-pumps.png') center/cover;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .info-section {
+            padding: 4rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-section:last-child {
+            border-bottom: none;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .info-content h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-content p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .info-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-content ul li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #444;
+        }
+
+        .info-content ul li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .info-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .info-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .info-image:hover img {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .info-grid.reverse {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">SR Trading Co<span class="dot">.</span></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#products" class="nav-link active">Products</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="index.html#contact" class="nav-link btn-contact">Contact Us</a>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="brands.html">Brands</a>
+        <a href="index.html#contact">Contact Us</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="info-hero">
+        <div class="container">
+            <h1 class="hero-title">Industrial & Domestic Pumps</h1>
+            <p class="hero-desc">Understanding the technology that powers your water systems.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Centrifugal Pumps -->
+        <section class="info-section">
+            <div class="info-grid">
+                <div class="info-content">
+                    <h2>Centrifugal Pumps</h2>
+                    <p>Centrifugal pumps are the most common type of pump used in industry, agriculture, and municipal
+                        water applications. They operate on a simple principle: rotational energy, typically from an
+                        electric motor, is converted into energy in a moving fluid.</p>
+                    <ul>
+                        <li><strong>How it works:</strong> A rotating impeller accelerates the fluid radially outward.
+                            The casing then slows down the fluid, converting velocity into pressure.</li>
+                        <li><strong>Applications:</strong> Water supply, irrigation, pumping sewage, and chemical
+                            processing.</li>
+                        <li><strong>Key Advantage:</strong> Smooth flow, simple design, and high efficiency for
+                            low-viscosity fluids.</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <!-- Local Image -->
+                    <img src="images/products/centrifugal.jpg" alt="Centrifugal Pump Diagram">
+                    <p class="text-center text-sm mt-2 text-gray-500"
+                        style="padding: 0.5rem; background: #f9f9f9; font-size: 0.85rem; color: #666;">Centrifugal Pump</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submersible Pumps -->
+        <section class="info-section">
+            <div class="info-grid reverse">
+                <div class="info-image">
+                    <!-- Local Image -->
+                    <img src="images/products/submersible.jpg" alt="Submersible Pump">
+                    <p class="text-center text-sm mt-2 text-gray-500"
+                        style="padding: 0.5rem; background: #f9f9f9; font-size: 0.85rem; color: #666;">Submersible Pump
+                        Unit</p>
+                </div>
+                <div class="info-content">
+                    <h2>Submersible Pumps</h2>
+                    <p>A submersible pump (or electric submersible pump - ESP) is a device which has a hermetically
+                        sealed motor close-coupled to the pump body. The whole assembly is submerged in the fluid to be
+                        pumped.</p>
+                    <ul>
+                        <li><strong>Advantage:</strong> Prevents pump cavitation (a problem associated with a high
+                            elevation difference between pump and liquid surface).</li>
+                        <li><strong>Efficiency:</strong> Pushes water to the surface rather than pulling it, making it
+                            more efficient than jet pumps.</li>
+                        <li><strong>Use Cases:</strong> Borewells, deep wells, drainage, and sewage pumping.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open-well Pumps -->
+        <section class="info-section">
+            <div class="info-grid">
+                <div class="info-content">
+                    <h2>Open-well Submersible Pumps</h2>
+                    <p>Open-well pumps are designed for applications where the water level fluctuates significantly.
+                        Unlike borewell pumps, these are installed at the bottom of an open well or tank.</p>
+                    <ul>
+                        <li><strong>Design:</strong> Water-cooled motor ensures durability even in submerged conditions.
+                        </li>
+                        <li><strong>Versatility:</strong> Can be used in underground tanks, canals, and irrigation
+                            wells.</li>
+                        <li><strong>Construction:</strong> typically made of Cast Iron or Stainless Steel for corrosion
+                            resistance.</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <!-- Local Image -->
+                    <img src="images/products/openwellsubmersible.jpg" alt="Openwell Pump">
+                    <p class="text-center text-sm mt-2 text-gray-500"
+                        style="padding: 0.5rem; background: #f9f9f9; font-size: 0.85rem; color: #666;">Openwell
+                        Submersible Pump</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 SR Trading Co. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

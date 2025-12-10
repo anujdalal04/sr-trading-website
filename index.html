@@ -30,13 +30,13 @@
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <a href="#home">SR Trading<span class="dot">.</span></a>
+                <a href="#home">SR Trading Co<span class="dot">.</span></a>
             </div>
             <div class="nav-links">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#products" class="nav-link">Products</a>
-                <a href="#brands" class="nav-link">Brands</a>
+                <a href="brands.html" class="nav-link">Brands</a>
                 <a href="#contact" class="nav-link btn-contact">Contact Us</a>
             </div>
             <div class="hamburger">
@@ -52,7 +52,7 @@
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#products">Products</a>
-        <a href="#brands">Brands</a>
+        <a href="brands.html">Brands</a>
         <a href="#contact">Contact Us</a>
     </div>
 
@@ -73,19 +73,13 @@
             <div class="hero-stats">
                 <div class="stat-item">
                     <span class="stat-number">25+</span>
-                    <span class="stat-label">Years of Trust</span>
+                    <span class="stat-label">Years of Experience</span>
                 </div>
                 <div class="stat-divider"></div>
                 <div class="stat-item">
                     <span class="stat-number">500+</span>
                     <span class="stat-label">Projects Delivered</span>
                 </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="mouse">
-                <div class="wheel"></div>
             </div>
         </div>
     </header>
@@ -130,7 +124,7 @@
                         <img src="images/office-image.jpg" alt="SR Trading Office">
                     </div>
                     <div class="experience-badge">
-                        <span class="years">25</span>
+                        <span class="years">25+</span>
                         <span class="text">Years<br>Experience</span>
                     </div>
                 </div>
@@ -176,11 +170,13 @@
             </div>
 
             <div class="products-grid">
-                <div class="product-card">
+                <!-- Card 1 -->
+                <a href="pumps-info.html" class="product-card"
+                    style="text-decoration: none; color: inherit; display: block;">
                     <div class="product-img">
                         <img src="images/pumps-product.jpg" alt="Industrial Pumps">
                         <div class="overlay">
-                            <a href="#contact" class="btn-icon"><i class="fas fa-arrow-right"></i></a>
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </div>
                     <div class="product-details">
@@ -189,13 +185,15 @@
                         <p>Submersible, centrifugal, and open-well pumps designed for maximum efficiency and longevity.
                         </p>
                     </div>
-                </div>
+                </a>
 
-                <div class="product-card">
+                <!-- Card 2 -->
+                <a href="motors-info.html" class="product-card"
+                    style="text-decoration: none; color: inherit; display: block;">
                     <div class="product-img">
                         <img src="images/motors-product.jpg" alt="Electric Motors">
                         <div class="overlay">
-                            <a href="#contact" class="btn-icon"><i class="fas fa-arrow-right"></i></a>
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </div>
                     <div class="product-details">
@@ -204,13 +202,15 @@
                         <p>Robust electric motors that drive your operations with consistent power and reduced energy
                             consumption.</p>
                     </div>
-                </div>
+                </a>
 
-                <div class="product-card">
+                <!-- Card 3 -->
+                <a href="firefighting-info.html" class="product-card"
+                    style="text-decoration: none; color: inherit; display: block;">
                     <div class="product-img">
                         <img src="images/firefighting-product.jpg" alt="Firefighting Systems">
                         <div class="overlay">
-                            <a href="#contact" class="btn-icon"><i class="fas fa-arrow-right"></i></a>
+                            <i class="fas fa-arrow-right"></i>
                         </div>
                     </div>
                     <div class="product-details">
@@ -219,7 +219,7 @@
                         <p>Certified firefighting pump sets ensuring safety and compliance for high-rise residential and
                             commercial complexes.</p>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -232,7 +232,9 @@
             </div>
             <div class="brands-grid-display">
                 <div class="brand-box">
-                    <img src="images/lubi-logo.png" alt="Lubi">
+                    <a href="lubi-pumps.html">
+                        <img src="images/lubi-logo.png" alt="Lubi">
+                    </a>
                 </div>
                 <div class="brand-box">
                     <img src="images/kirloskar-logo.png" alt="Kirloskar">
@@ -287,17 +289,11 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
                 </div>
 
                 <div class="contact-form-wrapper">
                     <form id="contactForm" class="contact-form">
-                        <h3>Send specific details</h3>
+                        <h3>Contact Us</h3>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name</label>
@@ -368,18 +364,10 @@
                         <li><a href="#products">Control Panels</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe to get latest updates.</p>
-                    <div class="newsletter-form">
-                        <input type="email" placeholder="Enter your email">
-                        <button><i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
+
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 SR Trading Co. All Rights Reserved.</p>
-                <p>Designed with <span style="color:red;">&hearts;</span> by Antigravity</p>
             </div>
         </div>
     </footer>

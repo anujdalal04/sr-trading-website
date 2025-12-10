@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lubi Pumps Catalogue - Full Range | SR Trading Co.">
+    <title>Lubi Pumps Full Catalogue | SR Trading Co.</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .lubi-hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.7)), url('images/hero-pumps.png') center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+
+        .catalogue-container {
+            display: flex;
+            gap: 2rem;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        /* Sidebar Navigation */
+        .catalogue-sidebar {
+            width: 250px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-medium);
+        }
+
+        .catalogue-sidebar h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            margin-bottom: 0.5rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+        
+        /* Updated Hover Color as per User Request */
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background-color: #e3f2fd;
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* Main Content */
+        .catalogue-content {
+            flex-grow: 1;
+        }
+
+        .category-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 120px; /* Offset for sticky header */
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--gray-medium);
+            padding-bottom: 1rem;
+        }
+
+        .category-header h2 {
+            margin: 0;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 4px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--gray-medium);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .product-img-wrapper {
+            height: 220px;
+            width: 100%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--gray-medium);
+        }
+
+        .product-img-wrapper img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .product-card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card h3 {
+            font-size: 1.1rem;
+            margin: 0 0 0.5rem 0;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .product-specs {
+            margin-top: auto;
+            font-size: 0.9rem;
+            color: #555;
+            padding-top: 0.5rem;
+        }
+        
+        .breadcrumb {
+            padding: 1rem 0;
+            background: var(--gray-light);
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb span {
+            color: #999;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .catalogue-container {
+                flex-direction: column;
+            }
+            
+            .catalogue-sidebar {
+                width: 100%;
+                position: static;
+                margin-bottom: 2rem;
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">SR Trading Co<span class="dot">.</span></a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#products" class="nav-link">Products</a>
+                <a href="brands.html" class="nav-link">Brands</a>
+                <a href="index.html#contact" class="nav-link btn-contact">Contact Us</a>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#products">Products</a>
+        <a href="brands.html">Brands</a>
+        <a href="index.html#contact">Contact Us</a>
+    </div>
+
+    <!-- Hero -->
+    <header class="lubi-hero">
+        <div class="container">
+            <h1 class="hero-title" style="font-size: 3.5rem;">Lubi Pumps Catalogue</h1>
+            <p class="hero-desc" style="margin: 0 auto;">Pumping solutions for every application.</p>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> <span>/</span> <a href="brands.html">Brands</a> <span>/</span> Lubi Pumps
+        </div>
+
+        <div class="catalogue-container">
+            <!-- Sidebar -->
+            <aside class="catalogue-sidebar">
+                <h3>Product Categories</h3>
+                <ul class="sidebar-nav">
+                    <li><a href="#borewell-submersible-pumps">Borewell Submersible Pumps</a></li>
+                    <li><a href="#centrifugal-monoblock-pumps">Centrifugal Monoblock Pumps</a></li>
+                    <li><a href="#chemical-pumps-mixers">Chemical pumps &amp; Mixers</a></li>
+                    <li><a href="#coolant-pumps">Coolant Pumps</a></li>
+                    <li><a href="#drainage-sewage-pumps">Drainage &amp; Sewage Pumps</a></li>
+                    <li><a href="#end-suction-pumps">End Suction Pumps</a></li>
+                    <li><a href="#fire-fighting-pump-sets">Fire Fighting Pump Sets</a></li>
+                    <li><a href="#hpn-systems">HPN Systems</a></li>
+                    <li><a href="#hvac-systems">HVAC Systems</a></li>
+                    <li><a href="#horizontal-split-case-pump">Horizontal Split Case Pump</a></li>
+                    <li><a href="#induction-motor">Induction Motor</a></li>
+                    <li><a href="#multistage-centrifugal-pumps">Multistage Centrifugal Pumps</a></li>
+                    <li><a href="#openwell-submersible-pumps">Openwell Submersible Pumps</a></li>
+                    <li><a href="#pressure-booster-systems">Pressure Booster Systems</a></li>
+                    <li><a href="#pump-controllers">Pump Controllers</a></li>
+                    <li><a href="#self-priming-centrifugal-pumps">Self Priming Centrifugal Pumps</a></li>
+                    <li><a href="#self-priming-monoblock-pumps">Self Priming Monoblock Pumps</a></li>
+                    <li><a href="#submerged-centrifugal-pumps">Submerged Centrifugal Pumps</a></li>
+                    <li><a href="#swimming-pool-pump">Swimming Pool Pump</a></li>
+                    <li><a href="#vertical-inline-pumps">Vertical Inline Pumps</a></li>
+                    <li><a href="#vertical-multistage-pumps">Vertical Multistage Pumps</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="catalogue-content">
+
+                <!-- Borewell Submersible Pumps -->
+                <div id="borewell-submersible-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Borewell Submersible Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/category/images/Cast_Iron_Submersible_Pumps.webp" alt="Cast Iron Submersible Pumps" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Cast Iron Submersible Pumps</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/category/images/Engineering_Plastic_Submersible_Pump.webp" alt="Engineering Plastic Submersible Pump" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Engineering Plastic Submersible Pump</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/category/images/Investment_Cast_Stainless_Steel_Submersible_Pumps.webp" alt="Investment Cast Stainless Steel Submersible Pumps" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Investment Cast Stainless Steel Submersible Pumps</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/category/images/Stainless_Steel_Submersible_Pumps.webp" alt="Stainless Steel Submersible Pumps" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Stainless Steel Submersible Pumps</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Centrifugal Monoblock Pumps -->
+                <div id="centrifugal-monoblock-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Centrifugal Monoblock Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/1_PwLxSQY.webp" alt="Centrifugal Monoblock Pumpsets (MDH Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Centrifugal Monoblock Pumpsets (MDH Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/End-Suction_Centrifugal_Close_Coupled_Pumps_LBI_-_1.webp" alt="End-Suction Centrifugal Close Coupled Pumps (LBI Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>End-Suction Centrifugal Close Coupled Pumps (LBI Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Lubi_High_Speed_Monoblock_Pump_LBH_-_1.webp" alt="High Speed Monoblock Pumps (LBH Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>High Speed Monoblock Pumps (LBH Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Shallow_Well_Jet_Pumps_MCJ_series-1.webp" alt="Shallow Well Jet Pumps (MCJ Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Shallow Well Jet Pumps (MCJ Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Self-Priming_Pumps_SMSJ_series-1.webp" alt="Self-Priming Pumps (SMSJ Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Self-Priming Pumps (SMSJ Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Horizontal_centrifugal_pumps_MXF_series-1.webp" alt="Horizontal Single-stage Centrifugal Pumps (MXF series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal Single-stage Centrifugal Pumps (MXF series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chemical pumps &amp; Mixers -->
+                <div id="chemical-pumps-mixers" class="category-section">
+                    <div class="category-header">
+                        <h2>Chemical pumps &amp; Mixers</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Chemical_Thermoplastic_Centrifugal_Pumps_LAC_Series-1.webp" alt="Chemical Thermoplastic Centrifugal Pumps (LAC Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Chemical Thermoplastic Centrifugal Pumps (LAC Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Chemical_Thermoplastic_Centrifugal_Pumps_LBC_series-1.webp" alt="Chemical Thermoplastic Centrifugal Pumps (LBC Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Chemical Thermoplastic Centrifugal Pumps (LBC Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Corrosion_Resistant_Thermoplastic_Pumps_LN_LP_series-1.webp" alt="Corrosion Resistant Thermoplastic Pumps (LN, LP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Corrosion Resistant Thermoplastic Pumps (LN, LP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/drum-pump.webp" alt="Drum Pumps (LDP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Drum Pumps (LDP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/drum-mixer-LDM.webp" alt="Drum and Tank Mixer (LDM Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Drum and Tank Mixer (LDM Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coolant Pumps -->
+                <div id="coolant-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Coolant Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Multistage_Coolant_Pumps_LIP_series-1.webp" alt="Multistage Coolant Pumps (LIP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Multistage Coolant Pumps (LIP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Immersible_pumps_LIR_series-1.webp" alt="Immersible pumps (LIR Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Immersible pumps (LIR Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drainage &amp; Sewage Pumps -->
+                <div id="drainage-sewage-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Drainage &amp; Sewage Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Cast_Iron_Submersible_Drainage_Pumps_CSP_series-1.webp" alt="Cast Iron Submersible Drainage Pumps (CSP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Cast Iron Submersible Drainage Pumps (CSP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Corrosion_Proof_Submersible_Drainage_Pumps_MSP_series-1.webp" alt="Corrosion Proof Submersible Drainage Pumps (MSP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Corrosion Proof Submersible Drainage Pumps (MSP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Drainage_Pumps_LAP_series-1.webp" alt="Drainage Pumps (LAP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Drainage Pumps (LAP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Sewage_Pumps_LFP_series-1.webp" alt="Sewage Pumps (LFP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Sewage Pumps (LFP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Effluent_Vortex_Pumps_LBP_series-1.webp" alt="Effluent Vortex Pumps (LBP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Effluent Vortex Pumps (LBP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Heavy-Duty_Sewage_Pumps_LHP_Series-1.webp" alt="Heavy-Duty Sewage Pumps (LHP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Heavy-Duty Sewage Pumps (LHP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Grinder_Pumps_LGP_series-1.webp" alt="Grinder Pumps (LGP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Grinder Pumps (LGP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Drainage_Pumps_LAS_series-1.webp" alt="Drainage Pumps (LAS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Drainage Pumps (LAS Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Large_Volume_Water_Pumps_LLP_Series-1.webp" alt="Large Volume Water Pumps (LLP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Large Volume Water Pumps (LLP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Clean_Water_Submersible_Monoset_Pumps_LVP_series-1.webp" alt="Clean Water Submersible Monoset Pumps (LVP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Clean Water Submersible Monoset Pumps (LVP Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End Suction Pumps -->
+                <div id="end-suction-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>End Suction Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Single-stage_long_coupled_end-suction_pumps_LBS_Series-1.webp" alt="Single-stage, long coupled end-suction pumps (LBS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Single-stage, long coupled end-suction pumps (LBS Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/LBO_PUMP_SET.354_lwn6WYp.webp" alt="Semi-Open Impeller Bare Shaft End-Suction Pumps (LBO Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Semi-Open Impeller Bare Shaft End-Suction Pumps (LBO Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Single-Stage_End-Suction_Pumps_LES_series-1.webp" alt="Single-Stage End-Suction Pumps (LES Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Single-Stage End-Suction Pumps (LES Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Close-coupled_stainless_steel_centrifugal_pumps_LCS_series-1.webp" alt="Close-coupled stainless steel centrifugal pumps (LCS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Close-coupled stainless steel centrifugal pumps (LCS Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fire Fighting Pump Sets -->
+                <div id="fire-fighting-pump-sets" class="category-section">
+                    <div class="category-header">
+                        <h2>Fire Fighting Pump Sets</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/end-suction-fire-pumps-UL-FM-FLBS-eng.webp" alt="End Suction Fire Pumps (UL / FM Approved FLBS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>End Suction Fire Pumps (UL / FM Approved FLBS Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/end-suction-long-coupled-diesel-driven-fire-pumps-LBSD.webp" alt="End suction long coupled Diesel driven Fire pumps (LBSD Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>End suction long coupled Diesel driven Fire pumps (LBSD Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/end-suction-long-coupled-diesel-driven-fire-pumps-LBSE.webp" alt="End suction long coupled Motor driven Fire pumps (LBSE Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>End suction long coupled Motor driven Fire pumps (LBSE Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/horizontal-split-case-fire-pumps-UL-FM-FLHC-eng.webp" alt="Horizontal split case fire pumps (UL / FM Approved FLHC Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal split case fire pumps (UL / FM Approved FLHC Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/horizontal-split-case-engine-driven-fire-pumps-LHCD.webp" alt="Horizontal split case engine driven Fire pumps (LHCD Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal split case engine driven Fire pumps (LHCD Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/horizontal-split-case-engine-driven-fire-pumps-LHCE.webp" alt="Horizontal split case Motor driven Fire pumps (LHCE Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal split case Motor driven Fire pumps (LHCE Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Multi_Stage_Multi_Outlet_Fire_Pumps_LMM_series-1.webp" alt="Multi Stage Multi Outlet Fire Pumps (LMM Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Multi Stage Multi Outlet Fire Pumps (LMM Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Close_coupled_end-suction_fire_booster_pumps_FLBC__FLBB_series-1.webp" alt="Close coupled end-suction fire booster pumps (FLBC / FLBB Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Close coupled end-suction fire booster pumps (FLBC / FLBB Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Submerged_centrifugal_Fire_pumpset_LHMFLFM_series-1.webp" alt="Submerged centrifugal Fire pumpset (LHMF/LFM Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Submerged centrifugal Fire pumpset (LHMF/LFM Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HPN Systems -->
+                <div id="hpn-systems" class="category-section">
+                    <div class="category-header">
+                        <h2>HPN Systems</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/aquapack-1000.webp" alt="Booster Sets With 2 To 4 LCR Pumps (Aquapack 1000)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Booster Sets With 2 To 4 LCR Pumps (Aquapack 1000)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HVAC Systems -->
+                <div id="hvac-systems" class="category-section">
+                    <div class="category-header">
+                        <h2>HVAC Systems</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Close-Coupled__Split-Coupled_Vertical_In-Line_Commercial_Pumps__mMWHc3W.webp" alt="Close-coupled &amp; Split-coupled vertical in-line commercial pumps (LVI &amp; LVS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Close-coupled &amp; Split-coupled vertical in-line commercial pumps (LVI &amp; LVS Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Horizontal_Split_Case_Pumps-1.webp" alt="Horizontal split case pumps (LHC Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal split case pumps (LHC Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Single-stage_long_coupled_end-suction_pumps_LBS_Series-1.webp" alt="Single-stage, long coupled end-suction pumps (LBS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Single-stage, long coupled end-suction pumps (LBS Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Single-Stage_End-Suction_Pumps_LES_series-1.webp" alt="Single-Stage End-Suction Pumps (LES Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Single-Stage End-Suction Pumps (LES Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Close-coupled_stainless_steel_centrifugal_pumps_LCS_series-1.webp" alt="Close-coupled stainless steel centrifugal pumps (LCS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Close-coupled stainless steel centrifugal pumps (LCS Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horizontal Split Case Pump -->
+                <div id="horizontal-split-case-pump" class="category-section">
+                    <div class="category-header">
+                        <h2>Horizontal Split Case Pump</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Horizontal_Split_Case_Pumps-1.webp" alt="Horizontal split case pumps (LHC Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal split case pumps (LHC Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Induction Motor -->
+                <div id="induction-motor" class="category-section">
+                    <div class="category-header">
+                        <h2>Induction Motor</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Lubi_Single_Phase_Motors_-_1.1.webp" alt="Energy-efficient Cast Iron Single Phase Induction Motors (MMS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Energy-efficient Cast Iron Single Phase Induction Motors (MMS Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Lubi_Three_Phase_Induction_Motor_-_01.webp" alt="Energy-efficient Cast Iron Three Phase Induction Motors (LMT Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Energy-efficient Cast Iron Three Phase Induction Motors (LMT Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/COOLING_TOWER_MOTOR-1.webp" alt="Cooling Tower Motors (LEC Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Cooling Tower Motors (LEC Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/LUBI_BRAKE_MOTOR-0.webp" alt="Three Phase Brake Motors (LEB Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Three Phase Brake Motors (LEB Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/IE-5_MOTOR_PHOTO.webp" alt="Permanent Magnet Synchronous Motors - IE5 (LSY Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Permanent Magnet Synchronous Motors - IE5 (LSY Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/fire-pump-spdp-motor-LE.webp" alt="Fire Pump Motors – NEMA SPDP (LE Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Fire Pump Motors – NEMA SPDP (LE Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/fire-pump-odp-motor-LD.webp" alt="Fire Pump Motors – NEMA ODP (LD Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Fire Pump Motors – NEMA ODP (LD Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multistage Centrifugal Pumps -->
+                <div id="multistage-centrifugal-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Multistage Centrifugal Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Horizontal_multistage_centrifugal_pumpsMH_series-1.webp" alt="Horizontal multistage centrifugal pumps (MH Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal multistage centrifugal pumps (MH Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Horizontal_multistage_centrifugal_pumps_MHI_-_MHN_series-1.webp" alt="Horizontal multistage centrifugal pumps (MHI/MHN Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal multistage centrifugal pumps (MHI/MHN Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Horizontal_Multistage_End-Suction_Pumps_SMCI_SMCN_series-1.webp" alt="Horizontal Multistage End-Suction Pumps (SMCI, SMCN Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal Multistage End-Suction Pumps (SMCI, SMCN Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Openwell Submersible Pumps -->
+                <div id="openwell-submersible-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Openwell Submersible Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Openwell_Submersible_Pumpset_LHS_-01.webp" alt="Horizontal Openwell Submersible Pumpsets (LHS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal Openwell Submersible Pumpsets (LHS Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Openwell_Submersible_Pumpset_LHL_-1.webp" alt="Horizontal Openwell Submersible Pumpsets (LHL Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal Openwell Submersible Pumpsets (LHL Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Vertical_Multi-Stage_Openwell_Submersible_Pumps_LCV_series-1.webp" alt="Vertical Multi-Stage Openwell Submersible Pumps (LCV Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Vertical Multi-Stage Openwell Submersible Pumps (LCV Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Lubi_Multistage_Openwell_Pumpset_LHMS_-_1.0.webp" alt="Horizontal multistage submersible pumps(LHMS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Horizontal multistage submersible pumps(LHMS Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Multistage_Open-well_Monoset_Horizontal__Vertical_Dual_Operatio_aBLQlcB.webp" alt="Multistage Open-well Monoset Horizontal &amp; Vertical Dual Operations (LHMS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Multistage Open-well Monoset Horizontal &amp; Vertical Dual Operations (LHMS Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pressure Booster Systems -->
+                <div id="pressure-booster-systems" class="category-section">
+                    <div class="category-header">
+                        <h2>Pressure Booster Systems</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Pressure_Booster_Pumps_MH_series.webp" alt="Pressure Booster Pumps (MH Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Pressure Booster Pumps (MH Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Pressure_Booster_Pumps_LMF_series.webp" alt="Pressure Booster Pumps (LMF Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Pressure Booster Pumps (LMF Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Pressure_Booster_Pumps_LHP_series.webp" alt="Pressure Booster Pumps (LHP Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Pressure Booster Pumps (LHP Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Twin_Booster_Systems_TB_series-1.webp" alt="Twin Booster Systems (TB Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Twin Booster Systems (TB Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/aquapack-1000.webp" alt="Booster Sets With 2 To 4 LCR Pumps (Aquapack 1000)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Booster Sets With 2 To 4 LCR Pumps (Aquapack 1000)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/1080_x_1080_Booster_Box-1.webp" alt="SMC Single Booster Box" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>SMC Single Booster Box</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/SINGLE_51080_x_1080_site_photo-1_1_cq2oIDi.webp" alt="SMC Twin Booster Box" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>SMC Twin Booster Box</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/LPD-90_LUBI_PUMPS.webp" alt="Home Pressure Booster Pumps (LPD Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Home Pressure Booster Pumps (LPD Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pump Controllers -->
+                <div id="pump-controllers" class="category-section">
+                    <div class="category-header">
+                        <h2>Pump Controllers</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Single_Phase_Starter_Panel-1.webp" alt="Single Phase Control Boxes for 3″ &amp; 4″ Water Filled Submersible Motors" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Single Phase Control Boxes for 3″ &amp; 4″ Water Filled Submersible Motors</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Direct_On_Line__Star-Delta_Starter_D.O.L._FASD-1.webp" alt="Direct On Line &amp; Star-Delta Starter (D.O.L., FASD)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Direct On Line &amp; Star-Delta Starter (D.O.L., FASD)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Direct_On_Line_Starter_Panel_D.O.L._LE_G6-1.webp" alt="Direct On Line Starter Panel (D.O.L.)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Direct On Line Starter Panel (D.O.L.)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Star_Delta_Starter_Panel_Star-Delta_LE_G20-1.webp" alt="Star Delta Starter Panel (Star-Delta)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Star Delta Starter Panel (Star-Delta)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Auto_Switch-1.webp" alt="Auto Switch" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Auto Switch</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Auto_Transformer_Control_Panel_ATS.webp" alt="Auto Transformer Control Panel (ATS)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Auto Transformer Control Panel (ATS)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Self Priming Centrifugal Pumps -->
+                <div id="self-priming-centrifugal-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Self Priming Centrifugal Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Self-priming_Solids_Handling_Close_Coupled_Pumps_LBM_series-1.webp" alt="Self-Priming Mud Pump, Solids Handling, Close Coupled Pumps (LBM Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Self-Priming Mud Pump, Solids Handling, Close Coupled Pumps (LBM Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Self Priming Monoblock Pumps -->
+                <div id="self-priming-monoblock-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Self Priming Monoblock Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Self_Priming_Monoblock_Pump_MDH-25B_-_1.webp" alt="Self Priming Monoblock Pumps (MDH &amp; MDL Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Self Priming Monoblock Pumps (MDH &amp; MDL Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/SELF_PRIMING_MINI_PUMP_VIRAT_-_1.webp" alt="Self Priming Monoblock Pumps (MDH, MDL &amp; VIRAT Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Self Priming Monoblock Pumps (MDH, MDL &amp; VIRAT Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submerged Centrifugal Pumps -->
+                <div id="submerged-centrifugal-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Submerged Centrifugal Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Submerged_centrifugal_pumps-1.webp" alt="Submerged centrifugal pumps (LHM &amp; LVM Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Submerged centrifugal pumps (LHM &amp; LVM Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Swimming Pool Pump -->
+                <div id="swimming-pool-pump" class="category-section">
+                    <div class="category-header">
+                        <h2>Swimming Pool Pump</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/PHOTO-1.webp" alt="Swimming Pool Pump (LSH Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Swimming Pool Pump (LSH Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vertical Inline Pumps -->
+                <div id="vertical-inline-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Vertical Inline Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Close-Coupled__Split-Coupled_Vertical_In-Line_Commercial_Pumps__mMWHc3W.webp" alt="Close-coupled &amp; Split-coupled vertical in-line commercial pumps (LVI &amp; LVS Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Close-coupled &amp; Split-coupled vertical in-line commercial pumps (LVI &amp; LVS Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vertical Multistage Pumps -->
+                <div id="vertical-multistage-pumps" class="category-section">
+                    <div class="category-header">
+                        <h2>Vertical Multistage Pumps</h2>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Vertical_Multi-stage_Centrifugal_Pumps_LCR_series-6.webp" alt="Vertical multistage inline centrifugal pumps (LCR Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Vertical multistage inline centrifugal pumps (LCR Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/high-pressure-vertical-multistage-inline-pumps-LCRH-and-LCRNH-series.webp" alt="High-pressure Vertical multistage inline pumps (LCRH and LCRNH Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>High-pressure Vertical multistage inline pumps (LCRH and LCRNH Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Vertical_Multi-stage_Centrifugal_Pumps_MVR_series-1.webp" alt="Vertical Multi-Stage Centrifugal Pumps (MVNA Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Vertical Multi-Stage Centrifugal Pumps (MVNA Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Vertical_Multi-stage_Centrifugal_Pumps_MVR_series-1_WOe5HcV.webp" alt="Vertical Multi-stage Centrifugal Pumps (MVR Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Vertical Multi-stage Centrifugal Pumps (MVR Series)</h3>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="https://www.lubipumps.com/media/uploads/products/images/Vertical_Multi-stage_Centrifugal_Pumps_LHR_series-1.webp" alt="Vertical Multi-stage Centrifugal Pumps (LHR Series)" loading="lazy">
+                            </div>
+                            <div class="product-card-body">
+                                <h3>Vertical Multi-stage Centrifugal Pumps (LHR Series)</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 SR Trading Co. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        // Smooth scroll for sidebar links with offset
+        document.querySelectorAll('.sidebar-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                const headerOffset = 120;
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+
+                // Update active state
+                document.querySelectorAll('.sidebar-nav a').forEach(link => link.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Highlight sidebar link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('.category-section');
+            const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
